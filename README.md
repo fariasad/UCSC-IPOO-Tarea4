@@ -24,8 +24,9 @@ El sistema permite modelar y gestionar:
 ## Estructura del proyecto
 
 /Proyecto
-├── sistema_academico.py
-├── diagrama_sistema_academico.puml
+├── Tarea4_Freddy_Arias_documento_proyecto.docx
+├── Tarea4_Freddy_Arias_sistema_academico.py
+├── Tarea4_Freddy_Arias_diagrama_sistema_academico.puml
 ├── README.md
 
 ---
