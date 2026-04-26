@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto corresponde al desarrollo de la Tarea 4 la cual consiste en el desarrollo de un sistema académico orientado a objetos, implementado en Python y diseñado previamente mediante UML con PlantUML. 
+Este proyecto corresponde al desarrollo de la Tarea 4, la cual consiste en el desarrollo de un sistema académico orientado a objetos, implementado en Python y diseñado previamente mediante UML con PlantUML. 
 
 El sistema permite modelar y gestionar:
 - Estudiantes y docentes
