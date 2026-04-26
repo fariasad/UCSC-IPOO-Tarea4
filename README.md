@@ -1,4 +1,4 @@
-# Sistema Académico Orientado a Objetos
+# Sistema Académico Orientado a Objetos.
 
 ## Descripción
 
