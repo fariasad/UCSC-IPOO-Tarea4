@@ -88,7 +88,20 @@ for i, (ins, pago) in enumerate(datos_estudiantes, start=1):
 
 ## Ejecución
 
-python Tarea4_Freddy_Arias_sistema_academico.py
+Para ejecutar la aplicación se deben realizar los siguientes pasos:
+
+1. Abrir una terminal.
+
+2. Clonar el repositorio:
+   git clone https://github.com/fariasad/UCSC-IPOO-Tarea4.git
+
+3. Acceder a la carpeta del proyecto:
+   cd UCSC-IPOO-Tarea4
+
+4. Ejecutar el programa:
+   python Tarea4_Freddy_Arias_sistema_academico.py
+   o, en caso de ser necesario:
+   python3 Tarea4_Freddy_Arias_sistema_academico.py
 
 ---
 
