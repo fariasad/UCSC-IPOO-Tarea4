@@ -1,0 +1,107 @@
+@startuml Diagrama Tarea 4
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam monochrome true
+skinparam linetype ortho
+
+title Sistema Académico TAREA 4 - Diagrama de Clases UML
+
+' Clase base
+' =========================
+class Persona {
+  - rut: str
+  - nombre: str
+  - apellido_paterno: str
+  - apellido_materno: str
+  - correo: str
+  + mostrar_resumen(): str
+}
+
+' Estudiante
+' =========================
+class Estudiante {
+  - carrera: str
+  - estado_academico: str
+  - inscripciones: List<Inscripcion>
+  + inscribir_en_seccion(seccion: SeccionAsignatura): str
+  + calcular_promedio_general(): float
+  + mostrar_resumen(): str
+}
+
+' Docente
+' =========================
+class Docente {
+  - especialidad: str
+  - secciones_asignadas: List<SeccionAsignatura>
+  + asignar_seccion(seccion: SeccionAsignatura): void
+  + mostrar_resumen(): str
+}
+
+' Herencia
+' =========================
+Persona <|-- Estudiante
+Persona <|-- Docente
+
+' Asignatura general
+' =========================
+class Asignatura {
+  - codigo_asignatura: str
+  - nombre_asignatura: str
+  - creditos: int
+  + descripcion(): str
+}
+
+' Sección concreta de una asignatura
+' =========================
+class SeccionAsignatura {
+  - codigo_seccion: str
+  - cupo_maximo: int
+  - inscripciones: List<Inscripcion>
+  + asignar_docente(docente: Docente): str
+  + agregar_inscripcion(inscripcion: Inscripcion): void
+  + resumen(): str
+}
+
+' Inscripción
+' =========================
+class Inscripcion {
+  - fecha_inscripcion: date
+  - evaluaciones: Dict<str, float>
+  - nota_final: float
+  - estado_inscripcion: str
+  + registrar_evaluacion(nombre_evaluacion: str, nota: float): void
+  + calcular_nota_final(): float
+  + validar_aprobacion(): str
+  + resumen(): str
+}
+
+' Beca y pago
+' =========================
+class Beca {
+  - nombre_beca: str
+  - porcentaje_descuento: float
+  + calcular_descuento(monto_base: float): float
+}
+
+class PagoArancel {
+  - monto_base: float
+  - fecha_vencimiento: date
+  - pagado: bool
+  + calcular_monto_final(): float
+  + registrar_pago(): str
+  + estado_pago(): str
+}
+
+' Relaciones principales
+' =========================
+Asignatura "1" o-- "0..*" SeccionAsignatura : tiene
+Docente "1" -- "0..*" SeccionAsignatura : imparte
+
+Estudiante "1" -- "0..*" Inscripcion : realiza
+SeccionAsignatura "1" -- "0..*" Inscripcion : registra
+Estudiante --> "0..1" Beca : posee
+
+PagoArancel --> "1" Estudiante : pertenece a
+PagoArancel --> "0..1" Beca : aplica
+
+@enduml
