@@ -88,7 +88,7 @@ for i, (ins, pago) in enumerate(datos_estudiantes, start=1):
 
 ## Ejecución
 
-python sistema_academico.py
+python Tarea4_Freddy_Arias_sistema_academico.py
 
 ---
 
